@@ -1,0 +1,29 @@
+{
+  "layouts": {
+    "edit": [
+      [
+        { "name": "name", "size": 6 },
+        { "name": "description", "size": 6 }
+      ]
+    ],
+    "create": [
+      [
+        { "name": "name", "size": 6 },
+        { "name": "description", "size": 6 }
+      ]
+    ],
+    "list": ["name", "description"]
+  },
+  "metadatas": {
+    "name": {
+      "edit": { "visible": true, "editable": true },
+      "create": { "visible": true, "editable": true },
+      "list": { "visible": true }
+    },
+    "description": {
+      "edit": { "visible": true, "editable": true },
+      "create": { "visible": true, "editable": true },
+      "list": { "visible": true }
+    }
+  }
+}

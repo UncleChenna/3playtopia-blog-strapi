@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": "Blog posts with categories and tags"
   },
   "options": {
     "draftAndPublish": true
@@ -12,22 +13,24 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "required": false,
+      "unique": true
     },
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "coverImage": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "images": {
@@ -42,6 +45,20 @@
     },
     "description": {
       "type": "string"
+    },
+    "author": {
+      "type": "string",
+      "required": false
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "posts"
     }
   }
 }
